@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/93f9f9ade9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Random Quote Generator</title>
+    <style>
+:root {
+   --main-color : #ADD8E6;
+   --secondary-color: #ffc0cb; 
+   --btn-color: #cff0cc;
+   --tweet-color: #fed8b1;    
+}
+
+i, i:hover {
+    color: black;
+}
+
+html, body {
+    height: 100%; 
+    width: 100%;
+    font-size: 16px; 
+}
+
+body {
+    font-family: 'Quicksand', 'sans-serif';
+}
+/* quote styings */
+#quote-area {
+    position: relative; 
+    border-radius: 10px;
+    background-color: var(--main-color); 
+    margin-bottom: 6rem; 
+    height: 352px;
+    width: 590px;
+    
+}
+
+.quote-tri {
+    position: absolute; 
+    width: 0;
+    height: 0; 
+    border: 40px solid; 
+    border-color: var(--main-color)  var(--main-color)   transparent transparent; 
+    right: 100px; 
+    bottom: -13%;
+    z-index: 1; 
+    display: inline-block; 
+}
+
+#tri-2 { 
+    right: 410px; 
+    opacity: 0; 
+    border-color: var(--main-color) transparent transparent var(--main-color)
+}
+#text {
+    line-height: 2.5rem !important;
+    font-style: italic; 
+    font-size: 1.5rem; 
+}
+
+/* author stylings  */
+#author-box {
+    position: absolute;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    width: auto !important; 
+    white-space: nowrap; 
+    bottom : -110px;
+    right : 38px;
+    z-index : -1; 
+}
+
+/* btn stylings */
+.btn {
+    background-color: var(--btn-color);
+    margin-right: 2rem !important;
+    font-size: 1.3rem; 
+    font-weight: lighter; 
+    text-transform: uppercase;
+}
+
+#btn-group {
+    position: absolute; 
+    top: 550px; 
+    left: 60px; 
+    margin-bottom: 15px; 
+}
+
+/* twitter quote */
+#btn-group.special:before {
+    content: 'Tweet Quote!'; 
+    position: absolute; 
+    right: -70px; 
+    top: -40px; 
+    background-color: var(--tweet-color); 
+    padding: .5rem; 
+    font-size: .75rem; 
+    border-radius: 10px;
+    
+}
+
+#btn-group.special:after {
+    content: ''; 
+    width: 0; 
+    height: 0; 
+    border: 5px solid; 
+    border-color: var(--tweet-color) transparent transparent var(--tweet-color);
+    position: absolute;
+    right: -18px; 
+    top: -7px; 
+     
+}
+
+
+    </style>
+</head>
+<body id="quote-box">
+    <div class="container row mx-auto justify-content-center h-100 align-content-center">
+        <div id="quote-area">
+            <div  id="my_quote" class="d-flex h-100 w-100 justify-content-center align-items-center text-center p-5" style="font-size: 40px;">quote</div>
+            <div id="author-box" class="py-3 px-4">
+                <p id="author" class="m-0">John Kennedy</p>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex align-items-center justify-content-between" id="btn-group">
+        <button class="btn btn-lg"  id="btn" onclick="getQuotes()">New Quote</button>
+    </div>
+    <script src="./quotespage.js"></script>
+</body>
+</html>
